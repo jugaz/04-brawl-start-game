@@ -6,9 +6,17 @@
         <BrawlStarsPicutre :brawl-start-id="parseInt(brawl.id)" :show-brawl-start="showBrawlStart"/>
         <BrawlStarsOptions :brawls="brawlStartArr" 
             @selection-brawl-start="checkAnswer"/>
+
+            <template v-if="showAnswer">
+                <h2  class="fade-in">{{ message }}</h2>
+                <button @click="newGame">
+                    Nuevo Juego
+                </button>
+            </template>
     </div>
 
-    
+
+
 
 
 </template>
@@ -33,7 +41,9 @@ export default {
         return {
             brawlStartArr: [],
             brawl: null,
-            showBrawlStart: false
+            showBrawlStart: false,
+            showAnswer:false,
+            message:''
         }
     },
 
@@ -48,6 +58,21 @@ export default {
         checkAnswer(brawlId) {
             console.log('brawlId',brawlId)
             this.showBrawlStart = true
+            this.showAnswer = true
+
+            if( brawlId === this.brawl.id ) {
+                this.message = `Correcto, ${ this.brawl.name }`
+            }
+            else {
+                this.message = `Oops, era ${ this.brawl.name }`
+            }
+        },
+        newGame() {
+            this.showBrawlStart = false
+            this.showAnswer     = false
+            this.brawlStartArr  = []
+            this.brawl          = null
+            this.mixBrawlsArray()
         }
 
     },
