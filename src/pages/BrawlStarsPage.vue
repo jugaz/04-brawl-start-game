@@ -1,18 +1,18 @@
 <template>
     <h1 v-if="!brawl">Espere por favor...</h1>
-    <div v-else>   
+    <div class="contenedor-brawlstartpage" v-else>   
         <h1>¿Quién es este brawl?</h1>
 
         <BrawlStarsPicutre :brawl-start-id="parseInt(brawl.id)" :show-brawl-start="showBrawlStart"/>
         <BrawlStarsOptions :brawls="brawlStartArr" 
             @selection-brawl-start="checkAnswer"/>
 
-            <template v-if="showAnswer">
-                <h2  class="fade-in">{{ message }}</h2>
-                <button @click="newGame">
-                    Nuevo Juego
-                </button>
-            </template>
+        <div class="response-brawlstartpage" v-if="showAnswer">
+            <h2  class="fade-in">{{ message }}</h2>
+            <button @click="newGame">
+                NUEVO JUEGO
+            </button>
+        </div>
     </div>
 
 
@@ -82,6 +82,32 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .response-brawlstartpage {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 30px;
+        padding-inline-start: 40px;
+    }
+    .response-brawlstartpage  button {
+        background-color: #fbbf24;
+        border-color: #343a40;
+        border-radius: .25rem;
+        border: 1px solid transparent;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        padding: 5px 0;
+        text-align: center;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 250px;
+    }
 </style>

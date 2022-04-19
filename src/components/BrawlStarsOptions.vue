@@ -32,6 +32,7 @@ export default {
       border: 1px solid rgba(0, 0, 0, 0.2);
       cursor: pointer;
       margin-bottom: 10px;
+      padding: 5px 0;
       width: 250px;
    }
 
