@@ -1,17 +1,23 @@
 <template>
    <div class="options-container">
       <ul>
-         <li>1</li>
-         <li>2</li>
-         <li>3</li>
-         <li>4</li>
+         <li v-for="brawl in brawls" 
+            :key="brawl.id" 
+            @click="$emit( 'selectionBrawlStart',  brawl.id )">
+            {{ brawl.name }}
+         </li>
       </ul>
    </div>
 </template>
 
 <script>
 export default {
-
+   props: {
+      brawls: {
+         type: Array,
+         required: true
+      }
+   }
 }
 </script>
 

@@ -1,8 +1,12 @@
 <template>
    <div class="brawlstars-container">
-      <img class="hidden-brawlstars" :src="imgSrc" alt="brawlstars">
+      <img 
+         v-if="!showBrawlStart"
+         :src="imgSrc"
+         class="hidden-brawlstars"
+         alt="brawlstars">
  
-      <img class="fade-in" v-if="imgSrc" :src="imgSrc" alt="brawlstars">
+      <img v-else class="fade-in" :src="imgSrc" alt="brawlstars">
    </div>
    
 </template>
@@ -14,7 +18,7 @@ export default {
          type: Number,
          require: true
       },
-      showbrawlStar: {
+      showBrawlStart: {
          type: Boolean,
          require: true,
          default: false
