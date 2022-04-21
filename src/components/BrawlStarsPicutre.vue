@@ -27,7 +27,7 @@ export default {
    },
    computed: {
       imgSrc() {
-          return `https://jugaz.github.io/brawl-star-api/images/${this.brawlStartId}.png`
+          return `https://jugaz.github.io/brawl-start-api/images/${this.brawlStartId}.png`
       }
    }
 
@@ -38,13 +38,10 @@ export default {
 
    .brawlstars-container {
       height: 300px;
-      display: flex;
-      justify-content: center;
    }
    img {
       height: 300px;
-      position: absolute;
-      /*right: 32%;*/
+
       user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;

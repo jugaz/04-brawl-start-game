@@ -110,4 +110,8 @@ export default {
         white-space: nowrap;
         width: 250px;
     }
+
+    .response-brawlstartpage button:hover {
+        background-color: #fcd34d;
+    }
 </style>
