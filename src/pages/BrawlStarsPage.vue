@@ -4,11 +4,12 @@
         <h1>¿Quién es este brawl?</h1>
 
         <BrawlStarsPicutre :brawl-start-id="parseInt(brawl.id)" :show-brawl-start="showBrawlStart"/>
-        <BrawlStarsOptions :brawls="brawlStartArr" 
+        <BrawlStarsOptions  
+            :brawls="brawlStartArr"
             @selection-brawl-start="checkAnswer"/>
 
         <div class="response-brawlstartpage" v-if="showAnswer">
-            <h2  class="fade-in">{{ message }}</h2>
+            <h2 class="fade-in">{{ message }}</h2>
             <button @click="newGame">
                 NUEVO JUEGO
             </button>
@@ -24,12 +25,7 @@
 <script>
 import BrawlStarsPicutre from "@/components/BrawlStarsPicutre.vue"
 import BrawlStarsOptions from "@/components/BrawlStarsOptions.vue"
-
-
 import getBrawlStarsOptions from "@/helpers/getBrawlStartOptions"
-import BrawlStars from '@/pages/BrawlStarsPage.vue';
-
-// console.log( getBrawlStarsOptions() )
 
 export default {
 
@@ -43,7 +39,7 @@ export default {
             brawl: null,
             showBrawlStart: false,
             showAnswer:false,
-            message:''
+            message:'',
         }
     },
 
@@ -55,16 +51,36 @@ export default {
             const rndInt = Math.floor( Math.random() * 4 )
             this.brawl = this.brawlStartArr[ rndInt ] 
         },
-        checkAnswer(brawlId) {
-            console.log('brawlId',brawlId)
+        
+        checkAnswer( brawlId ) {
+
             this.showBrawlStart = true
             this.showAnswer = true
-
+            console.log ("event",event.target)
             if( brawlId === this.brawl.id ) {
-                this.message = `Correcto, ${ this.brawl.name }`
+                this.message = `Excelente, era ${ this.brawl.name }`
+                event.target.classList.add("success")
+                document.querySelectorAll(".name-brawl").forEach(element => { 
+                      element.classList.add("disabled")
+                });
             }
             else {
+                event.target.classList.add("fail")
+                if(event.target.classList.contains("fail")) {
+                    document.querySelectorAll(".name-brawl").forEach(element => {
+                        
+                        
+                        if(this.brawl.name === element.innerHTML ) {
+                            console.log("A")
+                             element.classList.add("success")
+                        }
+                        else {
+                            element.classList.add("disabled")
+                        }
+                    });
+                }
                 this.message = `Oops, era ${ this.brawl.name }`
+          
             }
         },
         newGame() {
