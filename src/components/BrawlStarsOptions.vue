@@ -1,7 +1,9 @@
 <template>
    <div class="options-container">
       <ul>
-         <li class="name-brawl" v-for="brawl in brawls" :key="brawl.id" @click="$emit('selectionBrawlStart', brawl.id)">
+         <li class="name-brawl" v-for="brawl in brawls" 
+         :key="brawl.id" 
+         @click="$emit('selectionBrawlStart', brawl.id)">
             {{ brawl.name }}
          </li>
       </ul>
