@@ -1,6 +1,6 @@
 import brawlApi from "@/api/brawlStartApi";
 
-const getBrawlStars = () => {
+export const getBrawlStars = () => {
     const BrawlStarsArr = Array.from( Array(55) )
 
     return BrawlStarsArr.map((_, index)=> index + 1)
@@ -14,7 +14,7 @@ const getBrawlStarsOptions = async() => {
     return brawls
 }   
 
-const getBrawlStarsNames = async ( [a, b, c, d] = [] ) => {
+export const getBrawlStarsNames = async ( [a, b, c, d] = [] ) => {
 
     // const resp = await brawlApi.get(`/1.json`)
     // console.log("resp",resp.data.name, resp.data.id)
