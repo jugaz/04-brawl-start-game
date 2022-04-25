@@ -10,12 +10,44 @@ describe("BrawlStarsPicutre component", () => {
       },
     });
 
-    expect(wrapper.html()).toMatchInlineSnapshot(
-      `<div class="brawlstars-container"><img src="https://jugaz.github.io/brawl-start-api/images/1.png" class="hidden-brawlstars" alt="brawlstars"></div>`
-    );
+    expect(wrapper.html()).toMatchSnapshot();
   });
 
-  test("debe mostrar la imagen oculta y el brawlstart 50", () => {});
+  test("debe mostrar la imagen oculta y el brawlstart 50", () => {
+    const wrapper = shallowMount(BrawlStarsPicutre, {
+      props: {
+        brawlStartId: 50,
+        showBrawlStart: false,
+      },
+    });
 
-  test("debe de mostar el brawlstart si el showBrawlStart:true", () => {});
+    const [ img1, img2 ] = wrapper.findAll("img")
+
+
+    expect(img1.exists()).toBeTruthy();
+    expect(img2).toBe(undefined);
+    
+    expect( img1.classes('hidden-brawlstars') ).toBeTruthy()
+    expect( img1.attributes ).toBeTruthy()
+
+    expect( img1.attributes("src") ).toBe('https://jugaz.github.io/brawl-start-api/images/50.png')
+    
+  });
+
+  test("debe de mostar el brawlstart si el showBrawlStart:true", () => {
+
+    const wrapper = shallowMount(BrawlStarsPicutre, {
+        props: {
+          brawlStartId: 50,
+          showBrawlStart: true,
+        },
+      });
+  
+      const img1 = wrapper.find("img");
+  
+      expect(img1.exists()).toBeTruthy();
+      
+      expect( img1.classes('hidden-brawlstars') ).toBe(false);
+      expect( img1.classes('fade-in') ).toBe(true);
+  });
 });
