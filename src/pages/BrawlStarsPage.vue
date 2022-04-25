@@ -3,7 +3,7 @@
     <div class="contenedor-brawlstartpage" v-else>   
         <h1>¿Quién es este brawl?</h1>
 
-        <BrawlStarsPicutre :brawl-start-id="parseInt(brawl.id)" :show-brawl-start="showBrawlStart"/>
+        <BrawlStarsPicutre :brawl-start-id="brawl.id" :show-brawl-start="showBrawlStart"/>
         <BrawlStarsOptions  
             :brawls="brawlStartArr"
             @selection-brawl-start="checkAnswer"/>
@@ -71,7 +71,6 @@ export default {
                         
                         
                         if(this.brawl.name === element.innerHTML ) {
-                            console.log("A")
                              element.classList.add("success")
                         }
                         else {

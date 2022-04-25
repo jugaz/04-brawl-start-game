@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrawlStarsOptions component debe de hacer match con el snapshot 1`] = `
+<div class="options-container">
+  <ul>
+    <li class="name-brawl">SHELLY</li>
+    <li class="name-brawl">COLT</li>
+    <li class="name-brawl">BULL</li>
+    <li class="name-brawl">BROCK</li>
+  </ul>
+</div>
+`;

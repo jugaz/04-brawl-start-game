@@ -17,10 +17,10 @@ describe('getBrawlStartOptions helpers',() => {
         const brawl = await getBrawlStarsNames([1,2,3,4])
 
         expect(brawl).toStrictEqual([
-            { name: 'SHELLY', id: '1' },
-            { name: 'COLT', id: '2' },
-            { name: 'BULL', id: '3' },
-            { name: 'BROCK', id: '4' }
+            { name: 'SHELLY', id: 1 },
+            { name: 'COLT',   id: 2 },
+            { name: 'BULL',   id: 3 },
+            { name: 'BROCK',  id: 4 }
         ])
     
     })
@@ -35,22 +35,22 @@ describe('getBrawlStartOptions helpers',() => {
         expect(brawl).toEqual([
             { 
                 name: expect.any(String),
-                id: expect.any(String),
+                id: expect.any(Number),
             },
 
             { 
                 name: expect.any(String), 
-                id: expect.any(String), 
+                id: expect.any(Number), 
             },
 
             { 
                 name: expect.any(String),
-                id: expect.any(String),
+                id: expect.any(Number),
             },
 
             { 
                 name: expect.any(String),
-                id: expect.any(String),
+                id: expect.any(Number),
             }
         ])
         

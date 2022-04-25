@@ -2,6 +2,7 @@ import { shallowMount } from "@vue/test-utils";
 import BrawlStarsPicutre from "@/components/BrawlStarsPicutre";
 
 describe("BrawlStarsPicutre component", () => {
+  
   test("debe de hacer match con el snapshot", () => {
     const wrapper = shallowMount(BrawlStarsPicutre, {
       props: {
