@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrawlStarsPage component debe de hacer match con el snapshot 1`] = `<h1>Espere por favor...</h1>`;
+
+exports[`BrawlStarsPage component debe de hacer match con el snapshot cuando cargan los brawls 1`] = `
+<div class="contenedor-brawlstartpage">
+  <h1>¿Quién es este brawl?</h1>
+  <brawl-stars-picutre-stub brawlstartid="1" showbrawlstart="false"></brawl-stars-picutre-stub>
+  <brawl-stars-options-stub brawls="[object Object],[object Object],[object Object],[object Object]"></brawl-stars-options-stub>
+  <!--v-if-->
+</div>
+`;
