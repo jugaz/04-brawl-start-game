@@ -72,6 +72,32 @@ describe('BrawlStarsPage component', () => {
         expect(picture.attributes('brawlstartid')).toBe("1")
         expect(options.attributes('brawls')).toBeTruthy()
     })
+
+    test('pruebas con checkAnswer ', async () => {
+        const wrapper = shallowMount( BrawlStarsPage, {
+
+            data() {
+                return {
+                    brawlStartArr: mockBrawlstars,
+                    brawl: mockBrawlstars[0],
+                    showBrawlStart: false,
+                    showAnswer:false,
+                    message:'',
+                }
+            },
+        })
+        console.log("wrapper",wrapper.emit)
+        console.log("wrapper.vm",await wrapper.vm.checkAnswer())
+        console.log("event.target",event.target)
+        console.log("a",await wrapper.vm.checkAnswer(1,event.target))
+
+        await wrapper.vm.checkAnswer(1)
+
+        expect( wrapper.find('h2').exists() ).toBeTruthy()
+
+    
+    })
+    
     
     
 

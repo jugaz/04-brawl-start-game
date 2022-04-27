@@ -16,8 +16,7 @@ const getBrawlStarsOptions = async() => {
 
 export const getBrawlStarsNames = async ( [a, b, c, d] = [] ) => {
 
-    // const resp = await brawlApi.get(`/1.json`)
-    // console.log("resp",resp.data.name, resp.data.id)
+
 
     const promiseArr = [
         brawlApi.get(`/${ a }.json`),

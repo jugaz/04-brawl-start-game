@@ -4,7 +4,7 @@
         <h1>¿Quién es este brawl?</h1>
 
         <BrawlStarsPicutre :brawl-start-id="brawl.id" :show-brawl-start="showBrawlStart"/>
-        <BrawlStarsOptions  
+        <BrawlStarsOptions ref="options"  
             :brawls="brawlStartArr"
             @selection-brawl-start="checkAnswer"/>
 
@@ -52,21 +52,22 @@ export default {
             this.brawl = this.brawlStartArr[ rndInt ] 
         },
         
-        checkAnswer( brawlId ) {
+        checkAnswer( brawlId) {
 
             this.showBrawlStart = true
             this.showAnswer = true
-            console.log ("event",event.target)
+             console.log("this",this)
+          
             if( brawlId === this.brawl.id ) {
                 this.message = `Excelente, era ${ this.brawl.name }`
-                event.target.classList.add("success")
+                event.currentTarget.classList.add("success")
                 document.querySelectorAll(".name-brawl").forEach(element => { 
                       element.classList.add("disabled")
                 });
             }
             else {
-                event.target.classList.add("fail")
-                if(event.target.classList.contains("fail")) {
+                event.currentTarget.classList.add("fail")
+                if(event.currentTarget.classList.contains("fail")) {
                     document.querySelectorAll(".name-brawl").forEach(element => {
                         
                         
@@ -96,8 +97,11 @@ export default {
     }
 }
 </script>
-
 <style scoped>
+    h1,
+    h2 {
+        color:#ffff;
+    }
     .response-brawlstartpage {
         align-items: center;
         display: flex;
@@ -107,10 +111,11 @@ export default {
         padding-inline-start: 40px;
     }
     .response-brawlstartpage  button {
-        background-color: #fbbf24;
-        border-color: #343a40;
+        background-color: #ffc013;
+        border-color: #ffc013;
         border-radius: .25rem;
         border: 1px solid transparent;
+        box-shadow: 0 3px 2px 2px #00000033;
         color: #fff;
         cursor: pointer;
         font-size: 1rem;
@@ -124,9 +129,5 @@ export default {
         vertical-align: middle;
         white-space: nowrap;
         width: 250px;
-    }
-
-    .response-brawlstartpage button:hover {
-        background-color: #fcd34d;
     }
 </style>

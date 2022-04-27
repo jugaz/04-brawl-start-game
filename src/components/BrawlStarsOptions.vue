@@ -1,7 +1,8 @@
 <template>
    <div class="options-container">
       <ul>
-         <li class="name-brawl" v-for="brawl in brawls" 
+         <li class="name-brawl" v-for="brawl in brawls"
+         ref="list" 
          :key="brawl.id" 
          @click="$emit('selectionBrawlStart', brawl.id)">
             {{ brawl.name }}
@@ -13,12 +14,12 @@
 <script>
    export default {
       props: {
-
          brawls: {
             type: Array,
             required: true
          },
       },
+   
    }
 </script>
 
@@ -28,19 +29,18 @@
    }
 
    li {
-      background-color: white;
+      background-color: #666363;
       border-radius: 5px;
-      color: #fcd34d;
-      border: 1px solid #fcd34d;
+      color: #ffffff;
+      border: 1px solid #666363;
+      box-shadow: 0 3px 2px 2px #00000033;
       cursor: pointer;
       margin-bottom: 10px;
       padding: 5px 0;
       width: 250px;
    }
 
-   li:hover {
-      box-shadow: 0 3px 2px 2px #00000033;
-   }
+
 
    .options-container {
       display: flex;
@@ -48,8 +48,8 @@
    }
 
    li.success {
-      border: 1px solid #2bb673;
-      color: #2bb673;
+      background-color: #06af0c;
+      border: 1px solid #06af0c;
       animation-iteration-count: infinite;
       animation-name: pulse;
       animation-duration: 1s;
@@ -57,8 +57,8 @@
    }
 
    li.fail {
-      border: 1px solid red;
-      color: red;
+      border: 1px solid #f3302e;
+      background-color:#f3302e;
       animation-name: shakeX;
       animation-duration: 1s;
       animation-delay: .1s;
