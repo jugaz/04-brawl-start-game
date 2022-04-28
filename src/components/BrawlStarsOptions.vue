@@ -4,7 +4,7 @@
          <li class="name-brawl" v-for="brawl in brawls"
          ref="list" 
          :key="brawl.id" 
-         @click="$emit('selectionBrawlStart', brawl.id)">
+         @click.prevent="$emit('selectionBrawlStart', brawl.id, $event)">
             {{ brawl.name }}
          </li>
       </ul>

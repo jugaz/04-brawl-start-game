@@ -86,16 +86,16 @@ describe('BrawlStarsPage component', () => {
                 }
             },
         })
-        console.log("wrapper",wrapper.emit)
-        console.log("wrapper.vm",await wrapper.vm.checkAnswer())
-        console.log("event.target",event.target)
-        console.log("a",await wrapper.vm.checkAnswer(1,event.target))
-
-        await wrapper.vm.checkAnswer(1)
-
-        expect( wrapper.find('h2').exists() ).toBeTruthy()
 
     
+        await wrapper.vm.checkAnswer(1)
+        
+        expect( wrapper.find('h2').exists() ).toBeTruthy()
+        expect( wrapper.vm.showBrawlStart ).toBeTruthy()
+        expect( wrapper.find('h2').text() ).toBe(`Excelente, era ${ mockBrawlstars[0].name }`)
+    
+        await wrapper.vm.checkAnswer(10)
+        expect( wrapper.vm.message ).toBe(`Oops, era ${  mockBrawlstars[0].name }`)
     })
     
     

@@ -52,22 +52,23 @@ export default {
             this.brawl = this.brawlStartArr[ rndInt ] 
         },
         
-        checkAnswer( brawlId) {
+        checkAnswer( brawlId, targetClick ) {
 
             this.showBrawlStart = true
             this.showAnswer = true
-             console.log("this",this)
+            const $clickEvent = targetClick.target
           
             if( brawlId === this.brawl.id ) {
-                this.message = `Excelente, era ${ this.brawl.name }`
-                event.currentTarget.classList.add("success")
+                
+                $clickEvent.classList.add("success")
                 document.querySelectorAll(".name-brawl").forEach(element => { 
                       element.classList.add("disabled")
                 });
+                this.message = `Excelente, era ${ this.brawl.name }`
             }
             else {
-                event.currentTarget.classList.add("fail")
-                if(event.currentTarget.classList.contains("fail")) {
+                $clickEvent.classList.add("fail")
+                if($clickEvent.classList.contains("fail")) {
                     document.querySelectorAll(".name-brawl").forEach(element => {
                         
                         
