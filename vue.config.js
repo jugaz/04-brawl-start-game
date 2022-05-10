@@ -3,5 +3,5 @@ module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: 'docs',
   assetsDir: '',
-  publicPath: '/brawl-start-game/'
+  publicPath: '/04-brawl-start-game/'
 })
