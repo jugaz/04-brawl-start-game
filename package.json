@@ -1,5 +1,5 @@
 {
-  "name": "brawl-start-game",
+  "name": "04-brawl-start-game",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jugaz/brawl-start-game.git"
+    "url": "git+https://github.com/jugaz/04-brawl-start-game.git"
   },
   "author": "Jesús Antonio Ugaz Vegas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jugaz/brawl-start-game/issues"
+    "url": "https://github.com/jugaz/04-brawl-start-game/issues"
   },
-  "homepage": "https://github.com/jugaz/brawl-start-game#readme"
+  "homepage": "https://github.com/jugaz/04-brawl-start-game#readme"
 }
