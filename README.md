@@ -24,4 +24,4 @@ npm run test:unit
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 
-https://jugaz.github.io/brawl-start-game/
+https://jugaz.github.io/04-brawl-start-game/
