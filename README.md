@@ -1,4 +1,4 @@
-# brawl-start-game
+# Brawl Start Game
 
 ## Project setup
 ```
